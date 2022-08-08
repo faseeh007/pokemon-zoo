@@ -7,7 +7,8 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "build:ui": "rm -rf build && cd ./frontend && npm run build && cp -r build ../",
-    "test": "echo \"No test specified.\""
+    "test": "echo \"No test specified.\"",
+    "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -22,5 +23,8 @@
     "mongoose": "^6.5.0",
     "node": "^18.7.0",
     "npm": "^8.15.1"
-  }
+  },
+  "engines": {
+    "node": "^18.7.0"
+}
 }
